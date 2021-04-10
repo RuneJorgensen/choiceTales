@@ -4,9 +4,9 @@ services:
     image: library/postgres:latest
     ports:
       - "5432:5432"
-    container_name: aiport-db-postgres
+    container_name: choice-tales-postgres
     environment:
-      - POSTGRES_DB= airport-db
+      - POSTGRES_DB= choice-tales
       - POSTGRES_PASSWORD=docker
       - POSTGRES_USER=docker
     volumes:
