@@ -18,8 +18,8 @@ class HelloControllerTest {
 
     @Test
     fun testHello() {
-        val request: HttpRequest<Any> = HttpRequest.GET<Any>("/hello/Rune")
-        val body = client.toBlocking().retrieve(request, Message::class.java)
+        val request: HttpRequest<Any> = HttpRequest.GET<Any>("/hello/Rune").basicAuth("sherlock", "password")
+        val body = client.toBlocking().exchange(request, Message::class.java).body()
         Assertions.assertNotNull(body)
         Assertions.assertEquals("Hello Rune", body.text)
     }
