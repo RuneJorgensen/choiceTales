@@ -1,3 +1,8 @@
+##Set up
+Needed for running
+-Docker and docker-compose
+-
+
 ## Micronaut 2.4.2 Documentation
 
 - [User Guide](https://docs.micronaut.io/2.4.2/guide/index.html)
