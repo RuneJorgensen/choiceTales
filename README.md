@@ -1,6 +1,10 @@
 ## Set up needed for running
 - Docker and docker-compose
-- 
+- Postgres
+
+
+## Connecting to the db by terminal
+psql -h localhost -p 5432 -U <USER_NAME> <DB_NAME>
 
 ## Micronaut 2.4.2 Documentation
 
