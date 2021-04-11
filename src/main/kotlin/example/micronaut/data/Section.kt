@@ -4,4 +4,4 @@ import javax.persistence.Entity
 import javax.persistence.Id
 
 @Entity
-data class Section(@Id var id: Int = 1, var title: String = "", var text: String = "")
+data class Section(@Id var id: Int = 1, var section_number: Int = 1, var title: String = "", var text: String = "", var tale_id: Int = 1)

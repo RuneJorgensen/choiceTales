@@ -11,7 +11,7 @@ import io.micronaut.security.rules.SecurityRule
 import javax.inject.Inject
 
 @Secured(SecurityRule.IS_AUTHENTICATED)
-@Controller("/tale")
+@Controller("/choicetale")
 class SectionController {
 
     @Inject
