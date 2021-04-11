@@ -1,5 +1,4 @@
-## Set up
-Needed for running
+## Set up needed for running
 - Docker and docker-compose
 - 
 
