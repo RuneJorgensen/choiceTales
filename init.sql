@@ -1,10 +1,11 @@
-CREATE TABLE public.section (
+
+CREATE TABLE IF NOT EXISTS section (
                                 id bigint NOT NULL,
                                 title text,
                                 text text
 );
 
-INSERT INTO public.section VALUES (1, 'Carts', 'You stir into consciousness. Heat and blazing sunlight...
+INSERT INTO section VALUES (1, 'Carts', 'You stir into consciousness. Heat and blazing sunlight...
 the slow rumble of a wagon... heavy chains upon your
 limbs. You groan, your mouth dry, your stomach empty.
 As your eyes focus you can see your companions, fellow
@@ -35,7 +36,7 @@ do with you and your companions in chains. You swear
 you will regain your freedom and start your lives anew.
 But first, you must survive the horrors of slavery.
 Turn to 631.');
-INSERT INTO public.section VALUES (631, 'Sold', 'The slavers have sold you to the dreaded Saltdad Arena,
+INSERT INTO section VALUES (631, 'Sold', 'The slavers have sold you to the dreaded Saltdad Arena,
 a grim place where the poor and criminals alike fight
 to the death for the savage entertainment of the crowd.
 If you have the code A1, turn to 592.
@@ -44,7 +45,7 @@ If not, read on.
 If this is the first time you have been sold to
 Saltdad Arena, turn to 271.
 If you have fought in the arena before, turn to 582.');
-INSERT INTO public.section VALUES (271, 'Arena', 'The Saltdad Arena is the second largest complex in the
+INSERT INTO section VALUES (271, 'Arena', 'The Saltdad Arena is the second largest complex in the
 city, with only the ancient palace looming larger. Its
 dungeons go deep into the earth, where prisoners, slaves
 and monstrous animals are kept in large vaults, with only

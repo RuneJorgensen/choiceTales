@@ -4,10 +4,10 @@ micronaut:
 
 datasources:
   default:
-    url: jdbc:postgresql://localhost:5432/choice-tales
+    url: jdbc:postgresql://localhost:5432/rainbow_database
     driverClassName: org.postgresql.Driver
-    username: 'docker'
-    password: 'docker'
+    username: 'unicorn_user'
+    password: 'magical_password'
 
 jpa:
   default:
