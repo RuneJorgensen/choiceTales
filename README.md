@@ -1,4 +1,4 @@
-##Set up
+## Set up
 Needed for running
 - Docker and docker-compose
 - 
