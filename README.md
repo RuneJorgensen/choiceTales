@@ -1,6 +1,12 @@
 ## Set up needed for running
 - Docker and docker-compose
 - Postgres
+# Get db up and running
+- create a database.env in the root folder, with POSTGRES_USER, POSTGRES_PASSWORD and POSTGRES_DB
+- get the db up and running by docker-compose run
+
+# Get the application up and running
+- ./gradlesw run
 
 
 ## Connecting to the db by terminal
