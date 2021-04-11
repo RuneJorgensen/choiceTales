@@ -9,6 +9,9 @@
 - ./gradlesw run
 
 
+### Troubleshooting
+- The application can't connect to the db? The connection to the db happens at application startup. If you've started up the db after the application, the application won't have a connection. Solution: Restart the application.
+
 ## Connecting to the db by terminal
 psql -h localhost -p 5432 -U <USER_NAME> <DB_NAME>
 
