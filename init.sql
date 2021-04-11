@@ -6,36 +6,16 @@ CREATE TABLE IF NOT EXISTS section (
 );
 
 INSERT INTO section VALUES (1, 'Carts', 'You stir into consciousness. Heat and blazing sunlight...
-the slow rumble of a wagon... heavy chains upon your
-limbs. You groan, your mouth dry, your stomach empty.
-As your eyes focus you can see your companions, fellow
-survivors of the brutal pirate attack, crushed together
-with you upon the floor of a rolling wagon. You
-remember little since then, except vowing to your new-
-found friends that you would stick together, come what
-may. You are relieved to see that they are still alive, but
-where are you?
-Gazing through the bars of the wagon, your eyes
-focus on a blazing yellow-grey desert. To your left, filling
-the sky, are the Stonewalls – a massive and impenetrable
-mountain range that divides the barbarian kingdoms
-of the south from the antique and mysterious lands of
-Drakehallow. But which side of the range are you?
-The answer becomes immediately apparent as you look
-beyond the smelly dragonyaks which are ponderously
-hauling your cage. A vast, crumbling city of minarets
-and run-down adobe buildings fills your view. The sting
-in the air and on your lips tells you all you need to know.
-This is Saltdad, cruel throne of the tyrant Iron King, one
-of half a dozen tin-pot dictators in the barbaric Valley
-of Bones. You are far from civilised lands here...
-Thin-faced slavers with spears rattle the sides of your
-cage, barking at you to get down. You slump on your
-hindquarters. For the moment there is nothing you can
-do with you and your companions in chains. You swear
-you will regain your freedom and start your lives anew.
-But first, you must survive the horrors of slavery.
+the slow rumble of a wagon... heavy chains upon your limbs. You groan, your mouth dry, your stomach empty.
+As your eyes focus you can see your companions, fellow survivors of the brutal pirate attack, crushed together
+with you upon the floor of a rolling wagon. You remember little since then, except vowing to your new-found friends that you would stick together, come what may.
+You are relieved to see that they are still alive, but where are you?
+Gazing through the bars of the wagon, your eyes focus on a blazing yellow-grey desert. To your left, filling the sky, are the Stonewalls – a massive and impenetrable mountain range that divides the barbarian kingdoms of the south from the antique and mysterious lands of Drakehallow. But which side of the range are you?
+The answer becomes immediately apparent as you look beyond the smelly dragonyaks which are ponderously hauling your cage. A vast, crumbling city of minarets and run-down adobe buildings fills your view. The sting
+in the air and on your lips tells you all you need to know. This is Saltdad, cruel throne of the tyrant Iron King, one of half a dozen tin-pot dictators in the barbaric Valley of Bones. You are far from civilised lands here...
+Thin-faced slavers with spears rattle the sides of your cage, barking at you to get down. You slump on your hindquarters. For the moment there is nothing you can do with you and your companions in chains. You swear you will regain your freedom and start your lives anew. But first, you must survive the horrors of slavery.
 Turn to 631.');
+
 INSERT INTO section VALUES (631, 'Sold', 'The slavers have sold you to the dreaded Saltdad Arena,
 a grim place where the poor and criminals alike fight
 to the death for the savage entertainment of the crowd.

@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test
 import javax.inject.Inject
 
 @MicronautTest
-class HelloControllerTest {
+class SectionControllerTest {
 
     @Inject
     @field:Client("/")
@@ -18,7 +18,7 @@ class HelloControllerTest {
 
     @Test
     fun testHello() {
-        val request: HttpRequest<Any> = HttpRequest.GET<Any>("/hello/Rune").basicAuth("sherlock", "password")
+        val request: HttpRequest<Any> = HttpRequest.GET<Any>("/tale/Rune").basicAuth("sherlock", "password")
         val body = client.toBlocking().exchange(request, Message::class.java).body()
         Assertions.assertNotNull(body)
         Assertions.assertEquals("Hello Rune", body.text)

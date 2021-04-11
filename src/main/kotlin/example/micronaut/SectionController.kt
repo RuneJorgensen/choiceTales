@@ -11,8 +11,8 @@ import io.micronaut.security.rules.SecurityRule
 import javax.inject.Inject
 
 @Secured(SecurityRule.IS_AUTHENTICATED)
-@Controller("/hello")
-class HelloController {
+@Controller("/tale")
+class SectionController {
 
     @Inject
     lateinit var sectionRepository: SectionRepository
@@ -27,10 +27,8 @@ class HelloController {
     @Get("/section/{title}")
     @Produces(MediaType.APPLICATION_JSON)
     fun section(title : String): Message {
-        println("In index and sectionId is $title")
         val section = sectionRepository.find(title)
-        println("We got something from section ${section.id}")
-        return Message("Hello ${section.text}")
+        return Message("${section.text}")
     }
 
     @Get("/sectionbyid/{id}")
@@ -39,6 +37,6 @@ class HelloController {
         println("In index and sectionId is $id")
         val section = sectionRepository.findById(id)
         println("We got something from section ${section.get().id}")
-        return Message("Hello ${section.get().text}")
+        return Message("${section.get().text}")
     }
 }
