@@ -3,7 +3,7 @@
 - Postgres
 ### Get db up and running
 - create a database.env in the root folder, with POSTGRES_USER, POSTGRES_PASSWORD and POSTGRES_DB
-- get the db up and running by docker-compose run
+- get the db up and running by docker-compose run (you can close it gracefully by 'docker-compose down' or by ctrl+c
 
 ### Get the application up and running
 - ./gradlesw run
