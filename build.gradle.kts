@@ -29,11 +29,17 @@ dependencies {
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
     implementation("io.micronaut.security:micronaut-security")
     kapt("io.micronaut.security:micronaut-security-annotations")
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
+    annotationProcessor("io.micronaut.data:micronaut-data-processor")
+
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     implementation("io.micronaut:micronaut-validation")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
+    runtimeOnly("com.h2database:h2")
+    runtimeOnly("org.postgresql:postgresql")
+    runtimeOnly("io.micronaut.sql:micronaut-jdbc-tomcat")
 }
 
 

@@ -1,14 +1,14 @@
 version: '3.9'
 services:
-  airport-db:
-    image: library/postgres:latest
+  database:
+    image: "postgres" # use latest official postgres version
     ports:
       - "5432:5432"
-    container_name: aiport-db-postgres
-    environment:
-      - POSTGRES_DB= airport-db
-      - POSTGRES_PASSWORD=docker
-      - POSTGRES_USER=docker
+    container_name: choice-tales-postgres
+    env_file:
+      - database.env # configure postgres
     volumes:
-      - ./data:/var/lib/postgresql
+      - ./data:/var/lib/postgresql/data/ # persist data even if container shuts down
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  database-data: # named volumes can be managed easier using docker-compose
