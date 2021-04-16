@@ -13,6 +13,7 @@ group = "example.micronaut"
 val kotlinVersion=project.properties.get("kotlinVersion")
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 micronaut {
@@ -28,21 +29,18 @@ dependencies {
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
-    implementation("io.micronaut.security:micronaut-security")
-    kapt("io.micronaut.security:micronaut-security-annotations")
-    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
-    annotationProcessor("io.micronaut.data:micronaut-data-processor")
-
+    implementation("io.micronaut.mongodb:micronaut-mongo-sync")
+    implementation("org.jetbrains.kotlin:kotlin-noarg:1.4.21")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
-    implementation("io.micronaut:micronaut-validation")
+
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-    runtimeOnly("com.h2database:h2")
-    runtimeOnly("org.postgresql:postgresql")
-    runtimeOnly("io.micronaut.sql:micronaut-jdbc-tomcat")
 }
 
+noArg {
+    annotation("example.micronaut.annotation.NoArg")
+}
 
 application {
     mainClass.set("example.micronaut.ApplicationKt")
@@ -62,8 +60,4 @@ tasks {
             jvmTarget = "1.8"
         }
     }
-}
-
-noArg {
-    annotation("example.micronaut.annotation.NoArg")
 }

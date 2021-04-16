@@ -2,19 +2,5 @@ micronaut:
   application:
     name: complete
 
-datasources:
-  default:
-    url: jdbc:postgresql://localhost:5432/rainbow_database
-    driverClassName: org.postgresql.Driver
-    username: 'unicorn_user'
-    password: 'magical_password'
-
-jpa:
-  default:
-    entity-scan:
-      packages: 'example.micronaut.data'
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
-        show_sql: true
+mongodb:
+  uri: 'mongodb://localhost:27017/example'
