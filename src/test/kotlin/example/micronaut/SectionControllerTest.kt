@@ -18,7 +18,7 @@ class SectionControllerTest {
 
     @Test
     fun testHello() {
-        val request: HttpRequest<Any> = HttpRequest.GET<Any>("/tale/Rune").basicAuth("sherlock", "password")
+        val request: HttpRequest<Any> = HttpRequest.GET<Any>("/choicetale/Rune")
         val body = client.toBlocking().exchange(request, Message::class.java).body()
         Assertions.assertNotNull(body)
         Assertions.assertEquals("Hello Rune", body.text)

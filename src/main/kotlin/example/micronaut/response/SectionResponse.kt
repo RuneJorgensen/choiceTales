@@ -6,7 +6,8 @@ class SectionResponse(
     val id: String,
     val section_number: String,
     val title: String,
-    val text: String
+    val text: String,
+    val tale: TaleResponse?
 ) {
 
     companion object {
@@ -15,7 +16,8 @@ class SectionResponse(
                 id = section.id!!.toHexString(),
                 section_number = section.section_number,
                 title = section.title,
-                text = section.text
+                text = section.text,
+                tale = section.tale?.let { TaleResponse.fromEntity(it) }
             )
     }
 }

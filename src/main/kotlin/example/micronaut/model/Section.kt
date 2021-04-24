@@ -8,5 +8,6 @@ data class Section(
     var id: ObjectId? = null,
     var section_number: String,
     var title: String,
-    var text: String
+    var text: String,
+    var tale : Tale?
     )

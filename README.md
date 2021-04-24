@@ -2,11 +2,15 @@
 - Docker and docker-compose
 - Postgres
 ### Get db up and running
-- create a database.env in the root folder, with POSTGRES_USER, POSTGRES_PASSWORD and POSTGRES_DB
-- get the db up and running by 'docker-compose run' (you can close it gracefully by 'docker-compose down' or by ctrl+c)
+-
   #### Deleting data from the db
   - The data is persisted in the data folder (as of now). You need to delete this folder to delete your data. Close the application and the db. Do a 'sudo rm -r data'
-
+  #### Connecting to the db by terminal
+  - When you have the container up and running (to check write 'docker ps' in your terminal) you can get into the db by typing 'mongo'. 
+    'show dbs' to show your databases. 
+    'use nameofdb' to use a specific db. 
+    'show collections' to show your "tables" in the db
+    'db.section.find()' to show all data in the section collection
 ### Get the application up and running
 - ./gradlesw run
 

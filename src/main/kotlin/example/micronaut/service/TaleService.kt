@@ -4,6 +4,7 @@ import example.micronaut.exception.NotFoundException
 import example.micronaut.model.Tale
 import example.micronaut.repository.TaleRepository
 import example.micronaut.request.TaleRequest
+import org.bson.BsonValue
 import javax.inject.Singleton
 
 @Singleton
@@ -11,11 +12,14 @@ class TaleService(
     private val taleRepository: TaleRepository
 ) {
 
-    fun createTale(request: TaleRequest) {
-        taleRepository.create(Tale(
-            title = request.title,
-            description = request.description
-        ))
+    fun createTale(request: TaleRequest): BsonValue? {
+        val insertedTale = taleRepository.create(
+            Tale(
+                title = request.title,
+                description = request.description
+            )
+        )
+        return insertedTale.insertedId
     }
 
     fun findAll(): List<Tale> =
