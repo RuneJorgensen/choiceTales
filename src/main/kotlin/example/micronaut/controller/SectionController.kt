@@ -1,6 +1,5 @@
 package example.micronaut.controller
 
-import example.micronaut.model.Message
 import example.micronaut.request.SectionRequest
 import example.micronaut.response.SectionResponse
 import example.micronaut.service.SectionService
@@ -45,7 +44,14 @@ class SectionController(
         )
     }
 
-    @Get("/tale/{taleId}")
+    @Get("/tale/{taleTitle}")
+    fun findAllSectionsByTaleTitle(@PathVariable taleTitle: String): HttpResponse<List<SectionResponse>> {
+        val sections = sectionService.findAllByTaleTitle(taleTitle)
+            .map { SectionResponse.fromEntity(it) }
+        return HttpResponse.ok(sections)
+    }
+
+    @Get("/taleid/{taleId}")
     fun findAllSectionsByTaleId(@PathVariable taleId: String): HttpResponse<List<SectionResponse>> {
         val sections = sectionService.findAllByTaleId(taleId)
             .map { SectionResponse.fromEntity(it) }

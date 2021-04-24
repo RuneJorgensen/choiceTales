@@ -30,7 +30,7 @@ class SectionRepository(private val mongoClient: MongoClient) {
     fun findAllByTaleTitle(taleTitle: String): List<Section> =
         getCollection()
             .find(
-                Filters.eq("tale._title", ObjectId(taleTitle))
+                Filters.eq("tale.title", taleTitle)
             )
             .toList()
 
