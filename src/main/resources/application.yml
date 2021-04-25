@@ -3,4 +3,4 @@ micronaut:
     name: complete
 
 mongodb:
-  uri: 'mongodb://localhost:27017/example'
+  uri: 'mongodb://api_user:api1234@localhost:27017/choicetales_dev_db'

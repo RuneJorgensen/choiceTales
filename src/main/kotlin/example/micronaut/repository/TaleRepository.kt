@@ -31,7 +31,7 @@ class TaleRepository(
 
     private fun getCollection() =
         mongoClient
-            .getDatabase("example")
+            .getDatabase("choicetales_dev_db")
             .getCollection("tale", Tale::class.java)
 
 

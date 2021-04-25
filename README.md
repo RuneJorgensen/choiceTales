@@ -16,10 +16,7 @@
 
 
 ### Troubleshooting
-- 
-
-## Connecting to the db by terminal
-
+-
 
 ## Micronaut 2.4.2 Documentation
 

@@ -52,7 +52,7 @@ class SectionRepository(private val mongoClient: MongoClient) {
 
     private fun getCollection() =
         mongoClient
-            .getDatabase("example")
+            .getDatabase("choicetales_dev_db")
             .getCollection("section", Section::class.java)
 
 
