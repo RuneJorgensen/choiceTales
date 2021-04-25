@@ -23,6 +23,13 @@ class SectionController(
         )
     }
 
+    @Get("/all")
+    fun findAll(): HttpResponse<List<SectionResponse>> {
+        val sections = sectionService.findAll()
+            .map { SectionResponse.fromEntity(it) }
+        return HttpResponse.ok(sections)
+    }
+
     @Get("/id/{id}")
     fun sectionById(@PathVariable id : String): HttpResponse<SectionResponse> {
         println("In index and sectionId is $id")
@@ -56,5 +63,14 @@ class SectionController(
         val sections = sectionService.findAllByTaleId(taleId)
             .map { SectionResponse.fromEntity(it) }
         return HttpResponse.ok(sections)
+    }
+
+    @Put("/id/{id}")
+    fun update(@PathVariable id: String, @Body request: SectionRequest): HttpResponse<SectionResponse> {
+        val updatedSection = sectionService.updateSection(id, request)
+
+        return HttpResponse.ok(
+            SectionResponse.fromEntity(updatedSection)
+        )
     }
 }

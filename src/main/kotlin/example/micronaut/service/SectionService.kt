@@ -45,4 +45,23 @@ class SectionService(
     fun findAllByTaleId(taleId: String): List<Section> =
         sectionRepository.findAllByTaleId(taleId)
 
+    fun updateSection(id: String, request: SectionRequest): Section {
+        val foundTale = request.taleId?.let { taleService.findById(it) }
+
+        val updateResult = sectionRepository.update(
+            id = id,
+            update = Section(
+                title = request.title,
+                text = request.text,
+                section_number = request.section_number,
+                tale = foundTale
+            )
+        )
+
+        if (updateResult.modifiedCount == 0L)
+            throw throw RuntimeException("Employee with id $id was not updated")
+
+        return findById(id)
+    }
+
 }

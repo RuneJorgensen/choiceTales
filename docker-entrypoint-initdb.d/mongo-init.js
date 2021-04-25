@@ -19,6 +19,7 @@ db.createUser(
         roles: [{ role: 'readWrite', db: 'choicetales_dev_db' }],
     },
 );
+
 db.createCollection('tale');
 db.createCollection('section');
 

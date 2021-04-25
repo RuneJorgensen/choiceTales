@@ -28,4 +28,8 @@ class TaleService(
     fun findById(id: String): Tale =
         taleRepository.findById(id)
             ?: throw NotFoundException("Tale with id $id not found")
+
+    fun findByTitle(title: String): Tale =
+        taleRepository.findByTitle(title)
+            ?: throw NotFoundException("Tale with title '$title' not found")
 }

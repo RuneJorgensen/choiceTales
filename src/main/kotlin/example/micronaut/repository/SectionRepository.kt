@@ -3,6 +3,7 @@ package example.micronaut.repository
 import com.mongodb.client.MongoClient
 import com.mongodb.client.model.Filters
 import com.mongodb.client.result.InsertOneResult
+import com.mongodb.client.result.UpdateResult
 import example.micronaut.model.Section
 import example.micronaut.model.Tale
 import org.bson.types.ObjectId
@@ -49,6 +50,13 @@ class SectionRepository(private val mongoClient: MongoClient) {
             )
             .toList()
             .firstOrNull()
+
+    fun update(id: String, update: Section): UpdateResult =
+        getCollection()
+            .replaceOne(
+                Filters.eq("_id", ObjectId(id)),
+                update
+            )
 
     private fun getCollection() =
         mongoClient

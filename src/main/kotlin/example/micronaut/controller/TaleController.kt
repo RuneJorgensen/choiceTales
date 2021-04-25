@@ -1,6 +1,7 @@
 package example.micronaut.controller
 
 import example.micronaut.request.TaleRequest
+import example.micronaut.response.SectionResponse
 import example.micronaut.response.TaleResponse
 import example.micronaut.service.TaleService
 import io.micronaut.http.HttpResponse
@@ -26,12 +27,28 @@ class TaleController(
         )
     }
 
+    @Get("/all")
+    fun findAll(): HttpResponse<List<TaleResponse>> {
+        val tales = taleService.findAll()
+            .map { TaleResponse.fromEntity(it) }
+        return HttpResponse.ok(tales)
+    }
+
     @Get("/{id}")
-    fun taleByTitle(id : String): HttpResponse<TaleResponse> {
+    fun taleById(id : String): HttpResponse<TaleResponse> {
         val tale = taleService.findById(id)
         return HttpResponse.ok(
             TaleResponse.fromEntity(tale)
         )
     }
+
+    @Get("/title/{title}")
+    fun taleByTitle(title : String): HttpResponse<TaleResponse> {
+        val tale = taleService.findByTitle(title)
+        return HttpResponse.ok(
+            TaleResponse.fromEntity(tale)
+        )
+    }
+
 
 }
