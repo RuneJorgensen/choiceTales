@@ -14,7 +14,7 @@
     'show collections' to show your collections "tables" in the db
     'db.section.find()' to show all data in the section collection
 ### Get the application up and running
-- ./gradlesw run
+- ./gradlew run
 
 
 ### Troubleshooting

@@ -35,9 +35,9 @@ class SectionService(
         sectionRepository.findById(id)
             ?: throw NotFoundException("Section with id $id was not found")
 
-    fun findBySectionNumber(section_number: String): Section =
-        sectionRepository.findBySectionNumber(section_number)
-            ?: throw NotFoundException("Section with section number $section_number was not found")
+    fun findByTaleTitleSectionNumber(taleTitle: String, section_number: String): Section =
+        sectionRepository.findByTaleTitleSectionNumber(taleTitle, section_number)
+            ?: throw NotFoundException("Section with taleTitle $taleTitle and section number $section_number was not found")
 
     fun findAllByTaleTitle(taleTitle: String): List<Section> =
         sectionRepository.findAllByTaleTitle(taleTitle)

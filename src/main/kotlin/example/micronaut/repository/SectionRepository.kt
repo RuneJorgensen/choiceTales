@@ -43,13 +43,16 @@ class SectionRepository(private val mongoClient: MongoClient) {
             .toList()
             .firstOrNull()
 
-    fun findBySectionNumber(section_number: String): Section? =
+    fun findByTaleTitleSectionNumber(taleTitle: String, section_number: String): Section? =
         getCollection()
             .find(
-            Filters.eq("section_number", section_number)
-            )
+                Filters.and(
+                    Filters.eq("section_number", section_number),
+                    Filters.eq( "tale.title", taleTitle)
+            ))
             .toList()
             .firstOrNull()
+
 
     fun update(id: String, update: Section): UpdateResult =
         getCollection()
@@ -62,6 +65,5 @@ class SectionRepository(private val mongoClient: MongoClient) {
         mongoClient
             .getDatabase("choicetales_dev_db")
             .getCollection("section", Section::class.java)
-
 
 }

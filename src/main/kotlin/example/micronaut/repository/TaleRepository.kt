@@ -3,7 +3,6 @@ package example.micronaut.repository
 import com.mongodb.client.MongoClient
 import com.mongodb.client.model.Filters
 import com.mongodb.client.result.InsertOneResult
-import example.micronaut.model.Section
 import example.micronaut.model.Tale
 import org.bson.types.ObjectId
 import javax.inject.Singleton
@@ -33,7 +32,7 @@ class TaleRepository(
     fun findByTitle(title: String): Tale? =
         getCollection()
             .find(
-                Filters.eq("title", ObjectId(title))
+                Filters.eq("title", title)
             )
             .toList()
             .firstOrNull()

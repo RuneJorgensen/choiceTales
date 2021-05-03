@@ -41,11 +41,9 @@ class SectionController(
     }
 
 
-    @Get("/{sectionNumber}")
-    fun sectionBySectionNumber(@PathVariable sectionNumber: String): HttpResponse<SectionResponse> {
-        println("In index and section number is $sectionNumber")
-        val section = sectionService.findBySectionNumber(sectionNumber)
-        println("We got something from section $sectionNumber")
+    @Get("/{taleTitle}/{sectionNumber}")
+    fun sectionByTaleTitleSectionNumber(@PathVariable taleTitle: String, @PathVariable sectionNumber: String): HttpResponse<SectionResponse> {
+        val section = sectionService.findByTaleTitleSectionNumber(taleTitle, sectionNumber)
         return HttpResponse.ok(
             SectionResponse.fromEntity(section)
         )
